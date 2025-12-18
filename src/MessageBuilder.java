@@ -14,10 +14,10 @@ public class MessageBuilder {
     public MessageBuilder(String startingWord) {
         message = startingWord;
         numWords = 1;
-        String word = startingWord;
-        while (getNextWord(word) != null) {
-            word = getNextWord(word);
+        String word = getNextWord(startingWord);
+        while (word != null) {
             message += " " + word;
+            word = getNextWord(word);
             numWords++;
         }
     }
